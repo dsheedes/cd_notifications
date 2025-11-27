@@ -18,9 +18,10 @@ This resource was created as a default notification system for all of our paid a
 ### FiveM Server
 1. Download the release from the [releases section](https://github.com/dsheedes/cd_notifications/releases).
 2. Paste into your resources folder
-3. Ensure the resource in your `server.cfg`
+3. Read and configure the files in the `cd_notifications/configs` folder
+4. Ensure the resource in your `server.cfg`
     - `ensure cd_notifications`
-4. If the server is live start the resource, otherwise start the server
+5. If the server is live start the resource, otherwise start the server
 
 ### For development & contributions
 1. Clone the repository in to the directory of your choice
@@ -54,7 +55,9 @@ This resource was created as a default notification system for all of our paid a
 ![Notification stacked](https://i.imgur.com/wm98r3M.png)
 
 ### Sending a notification
-An example of the **add** event.
+Some examples of the **add** event.
+
+`Client -> Client`
 
 Limited options (*It still looks good I promise*)
 ```lua
@@ -81,7 +84,7 @@ TriggerEvent('cd_notifications:Add', {
                 use_progress = true, --Do you want a progress bar on the notification?
                 stack = true, --Do you want this notification to stack?
                 sound = 'notification.ogg', --Choose a sound file name from the [sound] folder.
-                --icon = 'fas fa-bell', --The icon displayed on the notification.
+                icon = 'fas fa-bell', --The icon displayed on the notification.
                 use_html = true, --Do you want to allow the use of html in the title and message?
                 fields = {
                     use_icon = true, --Do you want the icon to be visible on the notification?
@@ -101,7 +104,7 @@ List of all options ⬇️
 |---------|---------------------------|-----------|----------|---------|
 | title   | string                    | ''        | no       |         |
 | message | string                    | ''        | no       |         |
-| type    | string                    | 'info'    | no       |         |
+| type    | string                    | 'info'    | no       |  Possible options 'success' ('error' / 'danger'), ('info' / 'inform' / 'primary'), 'warning', 'light', 'dark' or custom       |
 | options | NotificationObjectOptions | undefined | no       |         |
 
 ### Notification Object Options
