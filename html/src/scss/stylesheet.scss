@@ -1,0 +1,27 @@
+@import "./components/colors";
+@import "./mixins/notification";
+@import "./mixins/settings";
+
+@include notification-base;
+
+@include notification($n-success, "success");
+@include notification($n-warning, "warning");
+@include notification($n-error, "danger");
+@include notification($n-error, "error");
+@include notification($n-info, "info");
+@include notification($n-info, "inform");
+@include notification($n-info, "primary");
+@include notification($n-dark, "dark");
+@include notification($n-light, "light");
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    background-color: transparent!important;
+    width: 100%;
+    height: 100%;
+
+    padding:0;
+    margin: 0;
+}

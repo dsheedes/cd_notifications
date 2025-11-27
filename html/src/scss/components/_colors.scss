@@ -1,0 +1,48 @@
+$n-success: (
+    "background": rgba(25, 135, 84, 1),
+    "box-shadow": inset 0px 0px 0px 1px lighten(rgba(25, 135, 84, 1), 5%),
+    "color": rgba(233, 236, 239, 1),
+    "fill":rgba(255,255,255,0.8),
+    "type":"success"
+);
+
+$n-warning: (
+    "background": rgba(255, 193, 7, 1),
+    "box-shadow": inset 0px 0px 0px 1px lighten(rgba(255, 193, 7, 1), 5%),
+    "color": rgba(33,33,33,1),
+    "fill":rgba(33,33,33,0.8),
+    "type":"warning"
+);
+
+$n-info: (
+    "background": rgba(13, 110, 253, 1),
+    "box-shadow": inset 0px 0px 0px 1px lighten(rgba(13, 110, 253, 1), 5%),
+    "color": rgba(233, 236, 239, 1),
+    "fill":rgba(255,255,255,0.8),
+    "type":"info"
+);
+
+$n-error: (
+    "background": rgba(255, 93, 87, 1),
+    "box-shadow": inset 0px 0px 0px 1px lighten(rgba(255, 93, 87, 1), 5%),
+    "color": rgba(233, 236, 239, 1),
+    "fill":rgba(255,255,255,0.8),
+    "type":"error"
+);
+
+$n-dark: (
+    "background": rgba(31, 31, 31, 1),
+    "box-shadow": inset 0px 0px 0px 1px lighten(rgba(31, 31, 31, 1), 5%),
+    "color": rgba(233, 236, 239, 1),
+    "fill":rgba(255,255,255,0.8),
+    "type":"dark"
+);
+
+$n-light: (
+    "background": rgba(248, 249, 250, 1),
+    "box-shadow": inset 0px 0px 0px 1px darken(rgba(248, 249, 250, 1), 5%),
+    "color": rgba(33,33,33,1),
+    "fill":rgba(33,33,33,0.8),
+    "type":"light"
+);
+

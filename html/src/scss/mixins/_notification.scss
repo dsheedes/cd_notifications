@@ -1,0 +1,135 @@
+@import "./notificationCount";
+
+@include nc-2-base;
+@include nc-3-base;
+
+@mixin notification-base {
+
+      .notifications{
+        position: absolute;
+        width: 20%;
+        display: flex;
+        gap:1.3rem;
+    
+        padding: 1rem;
+        
+        &.column {
+          flex-direction: column-reverse;
+        }
+    
+        &.row {
+          flex-direction: row-reverse;
+          width: 50%;
+        }
+      }
+    
+      body{
+        overflow:hidden;
+      }
+
+    .notification-wrapper {
+        width:100%;
+        height:100%;
+    
+        position: relative;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        user-select: none;
+    
+        width: 100%;
+    
+        .notification-fields {
+            display: flex;
+            flex-direction: column;
+    
+            border-radius: .5rem;
+            overflow: hidden;
+            
+            position: relative;
+            z-index: 3;
+    
+            .notification {
+                display: flex;
+                align-items: center;
+
+                .notification-icon {
+                    padding:1rem;
+                    border-right: 1px solid rgba(255,255,255,0.2);
+                    margin-top: 1.5px;
+                    svg {
+                        width:1.5rem;
+                        height: 1.5rem;
+                    }
+                    i {
+                        font-size: 1.5rem;
+                        max-width: 1.5rem;
+                        max-height: 1.5rem;
+                    }
+                    img {
+                        max-width: 2.5rem;
+                        border-radius: 0.25rem;
+                    }
+                }
+
+                .notification-content {
+                    padding: 0.3rem 0.75rem;
+                    .notification-title {
+                        font-size:110%;
+                        font-weight: bold;
+                    }
+                }
+            }
+    
+            .notification-progress{
+                width:100%;
+                height: 3px;
+                background: rgba(255,255,255,0.5);
+    
+                border-bottom-left-radius: .3rem;
+                border-bottom-right-radius: .3rem;
+    
+                &.notification-progress-hide{
+                    opacity: 0;
+                }
+            }
+    
+            .notification-counter {
+                position: absolute;
+                right: .5rem;
+                top: .5rem;
+    
+                font-size:60%;
+    
+                color:rgba(255,255,255,0.7);
+            }
+
+        }
+    }
+}
+@mixin notification($element, $type){
+    .notification-wrapper.#{$type} {    
+        .notification-fields {
+            background-color: map-get($element, "background");
+            color: map-get($element, "color");
+            box-shadow: map-get($element, "box-shadow");
+            .notification {
+                .notification-icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    svg {
+                        fill: map-get($element, "fill")
+                    }
+                }
+            }
+        }
+    
+        &.notification-count-2 {
+            @include nc-2(map-get($element, "background"), $type);
+        }
+    
+        &.notification-count-3 {
+            @include nc-3(map-get($element, "background"), $type);
+        }
+    }
+    
+}

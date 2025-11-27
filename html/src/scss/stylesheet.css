@@ -1,0 +1,638 @@
+.notification-count-2::before {
+  content: "";
+  height: 1rem;
+  width: 95%;
+  position: absolute;
+  bottom: -6px;
+  border-radius: 0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 300ms ease-in-out;
+  z-index: 1;
+}
+
+.notification-count-3::before {
+  content: "";
+  height: 1rem;
+  width: 95%;
+  position: absolute;
+  bottom: -6px;
+  border-radius: 0.25rem;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 300ms ease-in-out;
+  z-index: 1;
+}
+
+.notification-count-3::after {
+  content: "";
+  height: 1rem;
+  width: 90%;
+  position: absolute;
+  bottom: -11px;
+  border-radius: 0.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 300ms ease-in-out;
+  z-index: 2;
+}
+
+#settings-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  padding: 0;
+  margin: 0;
+}
+
+#settings {
+  width: 20%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  min-width: 400px;
+}
+#settings .settings-placeholder-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+#settings .settings-placeholder-wrapper.column {
+  flex-direction: column;
+}
+#settings .settings-placeholder-wrapper.row {
+  flex-direction: row;
+}
+
+.__tooltip {
+  font-weight: 600;
+  font-size: 90%;
+}
+
+.top-button {
+  background-color: #dee2e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+.top-button:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.top-button svg {
+  fill: #333;
+}
+.top-button.left {
+  position: absolute;
+  left: -1rem;
+  top: -1rem;
+}
+.top-button.right {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+}
+
+.settings-placeholder {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.settings-placeholder .settings-placeholder-icon {
+  margin: 1rem;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.settings-placeholder .settings-placeholder-fields {
+  width: 80%;
+}
+.settings-placeholder .settings-placeholder-fields .settings-placeholder-title {
+  width: 50%;
+  height: 1.1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0.8rem;
+}
+.settings-placeholder .settings-placeholder-fields .settings-placeholder-message {
+  width: 80%;
+  height: 1rem;
+  margin: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#options {
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+}
+
+.option-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.option {
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  aspect-ratio: 1/1;
+  background-color: #dee2e6;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.option svg {
+  fill: #333;
+}
+.option:hover {
+  background-color: #333;
+  color: #dee2e6;
+}
+.option:hover svg {
+  fill: #dee2e6;
+}
+.option.option-radio input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+.option.option-checkbox input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+.option:has(input[type=checkbox]:checked) {
+  background-color: #198754;
+}
+.option:has(input[type=checkbox]:checked) svg {
+  fill: #dee2e6;
+}
+.option:has(input[type=checkbox]:checked):hover {
+  background-color: #dee2e6;
+}
+.option:has(input[type=checkbox]:checked):hover svg {
+  fill: #333;
+}
+.option:has(input[type=radio]:checked) {
+  background-color: #198754;
+  cursor: auto;
+}
+.option:has(input[type=radio]:checked) svg {
+  fill: #dee2e6;
+}
+.option.close {
+  background-color: #ff5d57;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.option.close:hover {
+  background-color: rgb(255, 68.4107142857, 61.5);
+}
+.option.close svg {
+  fill: white;
+}
+
+#history-toggle {
+  cursor: pointer;
+}
+#history-toggle:hover {
+  background-color: #333;
+}
+#history-toggle:hover svg {
+  fill: #dee2e6;
+}
+
+.tts-options-wrapper {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.725rem;
+}
+.tts-options-wrapper .tts-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.125rem;
+  color: #ffffff;
+  padding: 0.125rem 0.25rem;
+}
+.tts-options-wrapper .tts-field > select {
+  width: 100%;
+}
+.tts-options-wrapper .tts-column {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.notifications {
+  position: absolute;
+  width: 20%;
+  display: flex;
+  gap: 1.3rem;
+  padding: 1rem;
+}
+.notifications.column {
+  flex-direction: column-reverse;
+}
+.notifications.row {
+  flex-direction: row-reverse;
+  width: 50%;
+}
+
+body {
+  overflow: hidden;
+}
+
+.notification-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  width: 100%;
+}
+.notification-wrapper .notification-fields {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+.notification-wrapper .notification-fields .notification {
+  display: flex;
+  align-items: center;
+}
+.notification-wrapper .notification-fields .notification .notification-icon {
+  padding: 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1.5px;
+}
+.notification-wrapper .notification-fields .notification .notification-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.notification-wrapper .notification-fields .notification .notification-icon i {
+  font-size: 1.5rem;
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+}
+.notification-wrapper .notification-fields .notification .notification-icon img {
+  max-width: 2.5rem;
+  border-radius: 0.25rem;
+}
+.notification-wrapper .notification-fields .notification .notification-content {
+  padding: 0.3rem 0.75rem;
+}
+.notification-wrapper .notification-fields .notification .notification-content .notification-title {
+  font-size: 110%;
+  font-weight: bold;
+}
+.notification-wrapper .notification-fields .notification-progress {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+.notification-wrapper .notification-fields .notification-progress.notification-progress-hide {
+  opacity: 0;
+}
+.notification-wrapper .notification-fields .notification-counter {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size: 60%;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.notification-wrapper.success .notification-fields {
+  background-color: rgb(25, 135, 84);
+  color: rgb(233, 236, 239);
+  box-shadow: inset 0px 0px 0px 1px rgb(28.984375, 156.515625, 97.3875);
+}
+.notification-wrapper.success .notification-fields .notification .notification-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-wrapper.success .notification-fields .notification .notification-icon svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.notification-wrapper.success.notification-count-2.success::before {
+  background-color: rgba(25, 135, 84, 0.8);
+}
+.notification-wrapper.success.notification-count-2.success.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.success.notification-count-3.success::before {
+  background-color: rgba(25, 135, 84, 0.8);
+}
+.notification-wrapper.success.notification-count-3.success.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.success.notification-count-3.success::after {
+  background-color: rgba(25, 135, 84, 0.6);
+}
+.notification-wrapper.success.notification-count-3.success.custom-stack::after {
+  background-color: var(--notification-secondary-color) !important;
+}
+
+.notification-wrapper.warning .notification-fields {
+  background-color: rgb(255, 193, 7);
+  color: rgb(33, 33, 33);
+  box-shadow: inset 0px 0px 0px 1px rgb(255, 199.375, 32.5);
+}
+.notification-wrapper.warning .notification-fields .notification .notification-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-wrapper.warning .notification-fields .notification .notification-icon svg {
+  fill: rgba(33, 33, 33, 0.8);
+}
+.notification-wrapper.warning.notification-count-2.warning::before {
+  background-color: rgba(255, 193, 7, 0.8);
+}
+.notification-wrapper.warning.notification-count-2.warning.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.warning.notification-count-3.warning::before {
+  background-color: rgba(255, 193, 7, 0.8);
+}
+.notification-wrapper.warning.notification-count-3.warning.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.warning.notification-count-3.warning::after {
+  background-color: rgba(255, 193, 7, 0.6);
+}
+.notification-wrapper.warning.notification-count-3.warning.custom-stack::after {
+  background-color: var(--notification-secondary-color) !important;
+}
+
+.notification-wrapper.danger .notification-fields {
+  background-color: rgb(255, 93, 87);
+  color: rgb(233, 236, 239);
+  box-shadow: inset 0px 0px 0px 1px rgb(255, 117.5892857143, 112.5);
+}
+.notification-wrapper.danger .notification-fields .notification .notification-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-wrapper.danger .notification-fields .notification .notification-icon svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.notification-wrapper.danger.notification-count-2.danger::before {
+  background-color: rgba(255, 93, 87, 0.8);
+}
+.notification-wrapper.danger.notification-count-2.danger.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.danger.notification-count-3.danger::before {
+  background-color: rgba(255, 93, 87, 0.8);
+}
+.notification-wrapper.danger.notification-count-3.danger.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.danger.notification-count-3.danger::after {
+  background-color: rgba(255, 93, 87, 0.6);
+}
+.notification-wrapper.danger.notification-count-3.danger.custom-stack::after {
+  background-color: var(--notification-secondary-color) !important;
+}
+
+.notification-wrapper.error .notification-fields {
+  background-color: rgb(255, 93, 87);
+  color: rgb(233, 236, 239);
+  box-shadow: inset 0px 0px 0px 1px rgb(255, 117.5892857143, 112.5);
+}
+.notification-wrapper.error .notification-fields .notification .notification-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-wrapper.error .notification-fields .notification .notification-icon svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.notification-wrapper.error.notification-count-2.error::before {
+  background-color: rgba(255, 93, 87, 0.8);
+}
+.notification-wrapper.error.notification-count-2.error.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.error.notification-count-3.error::before {
+  background-color: rgba(255, 93, 87, 0.8);
+}
+.notification-wrapper.error.notification-count-3.error.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.error.notification-count-3.error::after {
+  background-color: rgba(255, 93, 87, 0.6);
+}
+.notification-wrapper.error.notification-count-3.error.custom-stack::after {
+  background-color: var(--notification-secondary-color) !important;
+}
+
+.notification-wrapper.info .notification-fields {
+  background-color: rgb(13, 110, 253);
+  color: rgb(233, 236, 239);
+  box-shadow: inset 0px 0px 0px 1px rgb(38.2909836066, 125.1536885246, 253.2090163934);
+}
+.notification-wrapper.info .notification-fields .notification .notification-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-wrapper.info .notification-fields .notification .notification-icon svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.notification-wrapper.info.notification-count-2.info::before {
+  background-color: rgba(13, 110, 253, 0.8);
+}
+.notification-wrapper.info.notification-count-2.info.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.info.notification-count-3.info::before {
+  background-color: rgba(13, 110, 253, 0.8);
+}
+.notification-wrapper.info.notification-count-3.info.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.info.notification-count-3.info::after {
+  background-color: rgba(13, 110, 253, 0.6);
+}
+.notification-wrapper.info.notification-count-3.info.custom-stack::after {
+  background-color: var(--notification-secondary-color) !important;
+}
+
+.notification-wrapper.inform .notification-fields {
+  background-color: rgb(13, 110, 253);
+  color: rgb(233, 236, 239);
+  box-shadow: inset 0px 0px 0px 1px rgb(38.2909836066, 125.1536885246, 253.2090163934);
+}
+.notification-wrapper.inform .notification-fields .notification .notification-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-wrapper.inform .notification-fields .notification .notification-icon svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.notification-wrapper.inform.notification-count-2.inform::before {
+  background-color: rgba(13, 110, 253, 0.8);
+}
+.notification-wrapper.inform.notification-count-2.inform.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.inform.notification-count-3.inform::before {
+  background-color: rgba(13, 110, 253, 0.8);
+}
+.notification-wrapper.inform.notification-count-3.inform.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.inform.notification-count-3.inform::after {
+  background-color: rgba(13, 110, 253, 0.6);
+}
+.notification-wrapper.inform.notification-count-3.inform.custom-stack::after {
+  background-color: var(--notification-secondary-color) !important;
+}
+
+.notification-wrapper.primary .notification-fields {
+  background-color: rgb(13, 110, 253);
+  color: rgb(233, 236, 239);
+  box-shadow: inset 0px 0px 0px 1px rgb(38.2909836066, 125.1536885246, 253.2090163934);
+}
+.notification-wrapper.primary .notification-fields .notification .notification-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-wrapper.primary .notification-fields .notification .notification-icon svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.notification-wrapper.primary.notification-count-2.primary::before {
+  background-color: rgba(13, 110, 253, 0.8);
+}
+.notification-wrapper.primary.notification-count-2.primary.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.primary.notification-count-3.primary::before {
+  background-color: rgba(13, 110, 253, 0.8);
+}
+.notification-wrapper.primary.notification-count-3.primary.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.primary.notification-count-3.primary::after {
+  background-color: rgba(13, 110, 253, 0.6);
+}
+.notification-wrapper.primary.notification-count-3.primary.custom-stack::after {
+  background-color: var(--notification-secondary-color) !important;
+}
+
+.notification-wrapper.dark .notification-fields {
+  background-color: rgb(31, 31, 31);
+  color: rgb(233, 236, 239);
+  box-shadow: inset 0px 0px 0px 1px rgb(43.75, 43.75, 43.75);
+}
+.notification-wrapper.dark .notification-fields .notification .notification-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-wrapper.dark .notification-fields .notification .notification-icon svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.notification-wrapper.dark.notification-count-2.dark::before {
+  background-color: rgba(31, 31, 31, 0.8);
+}
+.notification-wrapper.dark.notification-count-2.dark.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.dark.notification-count-3.dark::before {
+  background-color: rgba(31, 31, 31, 0.8);
+}
+.notification-wrapper.dark.notification-count-3.dark.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.dark.notification-count-3.dark::after {
+  background-color: rgba(31, 31, 31, 0.6);
+}
+.notification-wrapper.dark.notification-count-3.dark.custom-stack::after {
+  background-color: var(--notification-secondary-color) !important;
+}
+
+.notification-wrapper.light .notification-fields {
+  background-color: rgb(248, 249, 250);
+  color: rgb(33, 33, 33);
+  box-shadow: inset 0px 0px 0px 1px rgb(233.125, 236.25, 239.375);
+}
+.notification-wrapper.light .notification-fields .notification .notification-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-wrapper.light .notification-fields .notification .notification-icon svg {
+  fill: rgba(33, 33, 33, 0.8);
+}
+.notification-wrapper.light.notification-count-2.light::before {
+  background-color: rgba(248, 249, 250, 0.8);
+}
+.notification-wrapper.light.notification-count-2.light.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.light.notification-count-3.light::before {
+  background-color: rgba(248, 249, 250, 0.8);
+}
+.notification-wrapper.light.notification-count-3.light.custom-stack::before {
+  background-color: var(--notification-primary-color) !important;
+}
+.notification-wrapper.light.notification-count-3.light::after {
+  background-color: rgba(248, 249, 250, 0.6);
+}
+.notification-wrapper.light.notification-count-3.light.custom-stack::after {
+  background-color: var(--notification-secondary-color) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: transparent !important;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}/*# sourceMappingURL=stylesheet.css.map */
