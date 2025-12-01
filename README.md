@@ -25,8 +25,12 @@ This resource was created as a default notification system for all of our paid a
 
 ### For development & contributions
 1. Clone the repository in to the directory of your choice
-2. Navigate your terminal to the directory
+2. Navigate your terminal to `cd_notifications/html`
 3. Run `npm i` to install all the packages
+
+*Use `npm run build` to compile the code. It will appear under `cd_notifications/html/dist`. This folder contains ready the ready to run resource*
+
+*Use `npm run dev` to test the UI locally. (Lua side won't work.)*
 
 
     
