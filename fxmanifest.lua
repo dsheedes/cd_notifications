@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 author 'discord.gg/codesign'
 description 'Codesign Notifications'
-version '1.0.0'
+version '1.1.0'
 lua54 'yes'
 
 shared_scripts {
@@ -25,4 +25,9 @@ files {
     'html/assets/*.css',
     'html/assets/*.js',
     'sounds/*.ogg'
+}
+
+escrow_ignore {
+    'client/*.lua',
+    'configs/*.lua',
 }
